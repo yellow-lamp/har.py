@@ -1,2 +1,2 @@
 # har.py
-Cover your eyes and close your computers. This is where the fun begins.
+Shut your eyes, cover your ears and close your computers. *This is where the fun begins.*
