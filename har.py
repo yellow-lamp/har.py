@@ -19,7 +19,7 @@ def open_links():
     for link in wbarray:
        wb.open_new_tab(link)
 
-def fork(filename, ):
+def fork(filename, num_children=2):
     num = ''.join(char for char in filename[::-1] if char in '1234567890')
 
     num1 = str(int(num) * 2) if len(num) else num
