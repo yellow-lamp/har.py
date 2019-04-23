@@ -1,7 +1,7 @@
 import webbrowser as wb
 from os import system
 from os.path import *
-import time
+from time import sleep
 
 wbarray = [
     'https://www.youtube.com/watch?v=H3_zxK4zb8M',
