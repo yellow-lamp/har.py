@@ -1,5 +1,6 @@
 import webbrowser as wb
-import path, system from os
+from os import system
+from os.path import *
 import time
 
 wbarray = [
