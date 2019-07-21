@@ -9,30 +9,25 @@ wbarray = [
     'https://www.youtube.com/watch?v=Y9wXfdjDzrA'
 ]
 
-
-config = {
-    'char_limit': 250,
-    'har': 'reee'
-}
-
-def open_links() -> None:
+def open_links(arr = wbarray) -> None:
     wb.open_new('https://www.minecraft.net/download')
-    for link in wbarray:
+    for link in arr:
        wb.open_new_tab(link)
 
-def fork(filename, num_children=2) -> tuple:
+def fork(filename, num_children = None) -> tuple:
+
     num = ''.join(char for char in filename[::-1] if char in '1234567890')
 
     num1 = str(int(num) * 2) if len(num) else num
     num2 = str(int(num) * 2 + 1) if len(num) else num
 
     fnames = (
-        'har' + (num1 if num1 else '1'),
-        'har' + (num2 if num2 else '2')
+        'har' + (num1 or '1'),
+        'har' + (num2 or '2')
     )
     return fnames
 
-def everything() -> None:
+def everything(char_limit = 250) -> None:
     print("Hello, Dave.")
     open_links()
 
@@ -42,11 +37,11 @@ def everything() -> None:
     
     children = fork(filename)
 
-    overflow = (child for child in children if len(child) > config['char_limit'])
+    overflow = (child for child in children if len(child) > char_limit)
 
     if overflow:
-        print('resetting')
-        fnames = (f'{config['har']}{i}' for i in range(len(children)))
+        print('resetting...')
+        fnames = (f'har{i}' for i in range(len(children)))
 
     with open(__file__) as reader:
         for child in children:
