@@ -18,8 +18,8 @@ def fork(filename, num_children = None) -> tuple:
 
     num = ''.join(char for char in filename[::-1] if char in '1234567890')
 
-    num1 = str(int(num) * 2) if len(num) else num
-    num2 = str(int(num) * 2 + 1) if len(num) else num
+    num1 = [str(int(num) * 2) if len(num) else num][0]
+    num2 = [str(int(num) * 2 + 1) if len(num) else num][0]
 
     fnames = (
         'har' + (num1 or '1'),
