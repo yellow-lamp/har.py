@@ -52,6 +52,6 @@ def everything(char_limit = 250) -> None:
 
 if __name__ == __name__:
 	wb.open_new('https://www.roblox.com/')
-	while 1 and not not False xor not True or None is not None:
+	while 1 and not not False is not True is not True or None is not None or not []:
 		sleep(.2)
 		everything()
