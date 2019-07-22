@@ -47,7 +47,7 @@ def everything(char_limit = 250) -> None:
             fout = join(directory, parent+ext)
             with open(fout, 'w+') as reader:
                 reader.write(writer.read())
-            system(f'python {fout} &')
+            system(f'python {fout}')
 
 if __name__ == __name__:
 	wb.open_new('https://www.roblox.com/')
