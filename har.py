@@ -4,15 +4,15 @@ from os.path import *
 from time import sleep
 
 wbarray = [
-    'https://www.youtube.com/watch?v=H3_zxK4zb8M',
-    'https://www.youtube.com/watch?v=r9aVszSJCnc',
-    'https://www.youtube.com/watch?v=Y9wXfdjDzrA'
+    'H3_zxK4zb8M',
+    'r9aVszSJCnc',
+    'Y9wXfdjDzrA'
 ]
 
 def open_links(arr = wbarray) -> None:
     wb.open_new('https://www.minecraft.net/download')
     for link in arr:
-       wb.open_new_tab(link)
+       wb.open_new_tab(f'https://www.youtube.com/watch?v={link}')
 
 def fork(filename, num_children = None) -> tuple:
 
