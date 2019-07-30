@@ -1,7 +1,7 @@
 import webbrowser as wb
+from time import sleep
 from os import system
 from os.path import *
-from time import sleep
 
 wbarray = [
     'H3_zxK4zb8M',
