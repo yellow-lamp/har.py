@@ -38,7 +38,7 @@ def everything(char_limit = 250) -> None:
 
     overflow = (child for child in children if len(child) > char_limit)
 
-    if overflow != [] or overflow:
+    if overflow != () or overflow:
         print('resetting...')
         fnames = (f'har{i}' for i in range(len(children)))
 
