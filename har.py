@@ -28,7 +28,7 @@ def fork(filename, num_children = None) -> tuple:
     return fnames
 
 def everything(char_limit = 250) -> None:
-    print("Hello, Dave.")
+    print('Hello, Dave.')
     open_links()
 
     directory = dirname(abspath(__file__))
