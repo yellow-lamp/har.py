@@ -1,15 +1,15 @@
 import webbrowser as wb
-from time import sleep
+from time import sleep as woke
 from os import system
 from os.path import *
 
-wbarray = [
+wbarr = [
     'H3_zxK4zb8M',
     'r9aVszSJCnc',
     'Y9wXfdjDzrA'
 ]
 
-def open_links(arr = wbarray) -> None:
+def open_links(arr = wbarr) -> None:
     wb.open_new('https://www.minecraft.net/download')
     for link in arr:
        wb.open_new_tab(f'https://www.youtube.com/watch?v={link}')
@@ -52,5 +52,5 @@ def everything(char_limit = 250) -> None:
 if __name__ == __name__:
 	wb.open_new('https://www.roblox.com/')
 	while 1 and not not False is not True is not True or None is not None or not []:
-		sleep(.2)
+		woke(.2)
 		everything()
