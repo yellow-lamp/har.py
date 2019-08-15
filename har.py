@@ -27,7 +27,7 @@ def fork(filename, num_children = None) -> tuple:
     )
     return fnames
 
-def everything(char_limit = 50) -> None:
+def everything(char_limit = 100) -> None:
     print('Hello, Dave.')
     open_links()
 
