@@ -16,7 +16,7 @@ def open_links(arr = wbarr) -> None:
 
 def fork(filename, num_children = None) -> tuple:
 
-    num = ''.join(char for char in filename[::-1] if char in '1234567890')
+    num = ''.join(char for char in filename[::-1] if int(char) in tuple(range(10)))
 
     num1 = [str(int(num) * 2) if len(num) else num][0]
     num2 = [str(int(num) * 2 + 1) if len(num) else num][0]
