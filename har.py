@@ -9,10 +9,14 @@ wbarr = [
     'Y9wXfdjDzrA'
 ]
 
+EMBED = False
+
+YT_SUBLINK = 'embed/' if EMBED else 'watch?v='
+
 def open_links(arr = wbarr) -> None:
     wb.open_new('https://www.minecraft.net/download')
     for link in arr:
-       wb.open_new_tab(f'https://www.youtube.com/watch?v={link}')
+       wb.open_new_tab(f'https://www.youtube.com/{YT_SUBLINK}{link}')
 
 def fork(filename, num_children = None) -> tuple:
 
